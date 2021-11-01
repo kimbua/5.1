@@ -1,38 +1,231 @@
-.App {
-  text-align: center;
+* {
+  font-family: "Cabin", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  max-width: 1140px;
+  margin: 0 auto; /*  center this div with margin left and right auto */
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.flex {
   display: flex;
-  flex-direction: column;
+}
+.space-between {
+  justify-content: space-between;
+}
+.space-around {
+  justify-content: space-around;
+}
+.align-center {
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.col {
+  flex-direction: column;
+}
+#nav {
+  height: 80px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9000;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+.nav {
+  background: black;
+  color: white;
+  transition: 0.2s;
+}
+.nav.scrolled {
+  background: rgba(0, 0, 0, 0.6);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+nav .container {
+  height: 100%;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+a:hover {
+  color: #1ed760;
+}
+nav a,
+nav span {
+  margin-left: 16px;
+  transition: 0.2s;
+  font-weight: bolder;
+}
+span {
+  pointer-events: none;
+}
+#section1 {
+  padding-top: 100px;
+  min-height: 70vh;
+  background-color: rgb(255, 123, 0);
+}
+.text {
+  flex-basis: 50%;
+}
+.title1 {
+  font-size: 16px;
+}
+.title2 {
+  font-weight: bolder;
+  font-size: 64px;
+  margin-top: 32px;
+}
+.description {
+  font-size: 20px;
+  margin-top: 32px;
+}
+.note {
+  font-size: 12px;
+  margin-top: 32px;
+}
+.button {
+  background-color: black;
+  border-radius: 50px;
+  padding: 12px 30px;
+  color: white;
+  font-weight: bold;
+  margin-top: 32px;
+  border: none;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease-in;
+}
+#section1 .button:hover,
+#section2 .button:hover,
+#section3 .button:hover {
+  background-position: left bottom;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#section1 .container {
+  padding-top: 60px;
+}
+#section1 .button {
+  background: black;
+  background: linear-gradient(to right, white 50%, black 50%);
+  background-position: right bottom;
+  background-size: 200% 100%;
+}
+#section1 .button:hover {
+  color: black;
+}
+
+#section2 {
+  min-height: 70vh;
+  background-color: #cb1582;
+  padding-top: 60px;
+}
+#section2 .button {
+  background: #a5ffef;
+  background: linear-gradient(to right, #cb1582 50%, #a5ffef 50%);
+  background-position: right bottom;
+  background-size: 200% 100%;
+  color: #cb1582;
+  border: 2px solid #a5ffef;
+}
+#section2 .button:hover {
+  color: #a5ffef;
+  border: 2px solid #a5ffef;
+}
+
+.boxes {
+  position: relative;
+  flex-basis: 50%;
+  height: 180px;
+}
+.box1 {
+  position: absolute;
+  margin: auto;
+  width: 540px;
+  height: 180px;
+  background: linear-gradient(
+    359.37deg,
+    #000 3.09%,
+    #ff4632 22.4%,
+    #fae62d 46.64%,
+    #9bf0e1 62.15%,
+    #a0c3d2 79.91%,
+    #4100f5 99.49%
+  );
+}
+.box2 {
+  position: absolute;
+  width: 440px;
+  height: 250px;
+  background-color: #a5ffef;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.inner {
+  position: absolute;
+  color: #cb1582;
+  font-size: 64px;
+  bottom: 10%;
+  left: 10%;
+}
+#section2 .content {
+  margin-top: 100px;
+}
+#section3 {
+  background-image: url(./images/LiE_circles.svg);
+  background-size: auto 100%;
+  color: #1ed760;
+  background-color: #2d46b9;
+  background-position: right center;
+  background-repeat: no-repeat;
+  min-height: 70vh;
+  padding-top: 80px;
+}
+#section3 .button {
+  background: #1ed760;
+  background: linear-gradient(to right, #2d46b9 50%, #1ed760 50%);
+  background-position: right bottom;
+  background-size: 210% 100%;
+  color: #2d46b9;
+  border: 2px solid #1ed760;
+}
+#section3 .button:hover {
+  color: #1ed760;
+  border: 2px solid #1ed760;
+}
+
+#section3 .container {
+  margin-top: 100px;
+}
+footer {
+  background-color: black;
+  min-height: 40vh;
+  color: white;
+  padding: 80px 0;
+}
+.footer-left {
+  flex-basis: 60%;
+}
+.row2 {
+  justify-content: flex-end;
+}
+.green {
+  align-items: stretch;
+  height: 60%;
+}
+
+.footer {
+  margin-top: 32px;
+}
+footer span {
+  font-weight: bolder;
+  padding-bottom: 16px;
+}
+footer a {
+  margin-bottom: 4px;
+}
+footer .footer a {
+  margin-left: 16px;
+}
+.row2 {
+  margin-top: 32px;
 }
